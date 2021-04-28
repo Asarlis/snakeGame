@@ -5,6 +5,9 @@ const connect = function () {
     port: 50541
   });
   conn.write('Name: SMD')
+  // conn.write('Move: up')
+  // setInterval(()=> {conn.write("Move: left")},500)
+
 
   // interpret incoming data as text
   conn.setEncoding("utf8");
