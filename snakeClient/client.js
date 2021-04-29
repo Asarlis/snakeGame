@@ -1,19 +1,15 @@
 const net = require('net')
+const { IP, PORT } = require("./constants");
+
 const connect = function () {
   const conn = net.createConnection({
-    host: 'localhost',
-    port: 50541
+    host: IP,
+    port: PORT,
   });
   conn.write('Name: SMD')
-  // conn.write('Move: up')
-  // setInterval(()=> {conn.write("Move: left")},500)
-
-
   // interpret incoming data as text
   conn.setEncoding("utf8");
   conn.on("data", (data) => {
-    // code that does something when the connection is first established
-  
     console.log(data)
   });
   conn.on('connect', () => {
